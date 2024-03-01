@@ -56,7 +56,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	function newtext(){//Added a new function and named it "newtext" for when  text on page 5 is changed to probability text.;
 
 	var percentstomachbug = stomachbug_count/4*100 // Created variable to keep count of cold symptoms and calculate probability percentage.;
-	var percentfoodpoison = allergy_count/4*100 // Created variable to keep count of allergy symptoms and calculate probability percentage.;
+	var percentfoodpoison = foodpoison_count/4*100 // Created variable to keep count of allergy symptoms and calculate probability percentage.;
 	var resultText = document.getElementById("results");//Added variable for the results content on page 5.;
 	resultText.innerHTML = "Probability it is a stomach bug =" + percentstomachbug + "% <br> Probability it is food poisoning =" + percentfoodpoison + "%"//This changes the results content to the final probability/diagnosis. Added percentage symbols.
 		
