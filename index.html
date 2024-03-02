@@ -17,10 +17,10 @@ Timothy Riedel
 triedel@utexas.edu
  
 Brief Description of Goal of Code:
-blah, blah, blah,
+To show the difference in whether someone has food poisoning or a stomach bug
  
 Known Issues:
-blah, blah, blah, blah
+No known issues
 Ignore this error message if you see it using the javaScript console: Error with Permissions-Policy header: Origin trial controlled feature not enabled: 'interest-cohort'.
 
 References:
@@ -39,25 +39,25 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 <script>
 
 
-  	var stomachbug_count = 0;
-        var foodpoison_count = 0;
+  	var stomachbug_count = 0; //Variable for stomach bug count
+        var foodpoison_count = 0; //variable for food poisoning count
 
 
-        function stomachbugAdd(){
-            stomachbug_count = stomachbug_count + 1;
-		alert(stomachbug_count);
+        function stomachbugAdd(){ 
+            stomachbug_count = stomachbug_count + 1; //function for stomach bug count, adds 1 to count when button clicked
+		alert(stomachbug_count); //alert pop up for stomach bug count
 
         }
 
         function foodpoisonAdd(){
-            foodpoison_count = foodpoison_count + 1;
-		alert(foodpoison_count); //Added the alert pop up to count the cold count.
+            foodpoison_count = foodpoison_count + 1; //function for stomach bug count, adds 1 to count when button clicked
+		alert(foodpoison_count); //alert pop up for food poisoning count
         }
 
-	function newtext(){//Added a new function and named it "newtext" for when  text on page 5 is changed to probability text.;
+	function newtext(){//Added a new function and named it "newtext" for when text on page 5 is changed to probability text.;
 
-	var percentstomachbug = stomachbug_count/4*100 // Created variable to keep count of cold symptoms and calculate probability percentage.;
-	var percentfoodpoison = foodpoison_count/4*100 // Created variable to keep count of allergy symptoms and calculate probability percentage.;
+	var percentstomachbug = stomachbug_count/4*100 // Created variable to keep count of stomach bug symptoms and calculate probability percentage.;
+	var percentfoodpoison = foodpoison_count/4*100 // Created variable to keep count of food poisoning symptoms and calculate probability percentage.;
 	var resultText = document.getElementById("results");//Added variable for the results content on page 5.;
 	resultText.innerHTML = "Probability it is a stomach bug =" + percentstomachbug + "% <br> Probability it is food poisoning =" + percentfoodpoison + "%"//This changes the results content to the final probability/diagnosis. Added percentage symbols.
 		
@@ -93,7 +93,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 img, object{
     max-height:30%;
-    max-width:30%;
+    max-width:30%; <!--/Added image resize code, made image smaller-->
 
 }
 
@@ -103,15 +103,15 @@ img, object{
 	
 	<!-- HERE IS WHERE ALL OF YOUR HTML PAGES GO -->
 
-<div id="header" class="w3-container w3-flat-green-sea"><!--/Changed carrot color to green sea color.-->
-	<h1>Do you have food poisoning or a stomach bug?</h1>
+<div id="header" class="w3-container w3-flat-midnight-blue"><!--/Midnight blue color header.-->
+	<h1>Do you have food poisoning or a stomach bug?</h1> <!--/This is the question in the header-->
 
 </div>
 	
 <div id="content" class="w3-container">
-	<p>Are you feeling like you might have food poisoning but wonder if it is a stomach bug? Answer a few short questions to find out!</p><!--/Added a question mark to first sentence-->
+	<p>Are you feeling like you might have food poisoning but wonder if it is a stomach bug? Answer a few short questions to find out!</p><!--/Added initial question that is brief description of purpose of website-->
 
-<img src="https://www.thehealthy.com/wp-content/uploads/2017/12/stomach-bug-vs-food-poisoning-how-to-tell-the-difference-342461018-CHAjAMP-ft.jpg" alt="Man holding stomach">
+<img src="https://www.thehealthy.com/wp-content/uploads/2017/12/stomach-bug-vs-food-poisoning-how-to-tell-the-difference-342461018-CHAjAMP-ft.jpg" alt="Man holding stomach"> <!-- added image code-->
 	
 	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a><!--/Clicking this button takes the participant to the next page, first question.-->
 	
@@ -120,14 +120,14 @@ img, object{
 	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
 
 <div class="page" id="one"><!--/This begins the first page, first diagnostic question-->
-	<div id="header" class="w3-container w3-flat-green-sea"><!--/Changed carrot color to green sea.-->
+	<div id="header" class="w3-container w3-flat-midnight-blue"><!--/Changed carrot color to green sea.-->
 		<h1>Question 1</h1>
 	</div>
 	
     	<div id="content" class="w3-container">
         <p>How long have your symptoms been ongoing?</p>    <!--/Inserted first diagnostic question-->
-		<a href="#two" onclick="foodpoisonAdd();"class="w3-btn w3-flat-nephritis">Less than a few days</a> <!--/Button takes participant to next page, second question. Button counts for allergy symptoms. Color was changed from carrot to nephritis.-->
-         	<a href="#two" onclick="stomachbugAdd();"class="w3-btn w3-flat-alizarin">More than a few days</a><!--/Button takes participant to next page, second question. Button counts for cold symptoms. Color was changed from carrot to alizarin.-->
+		<a href="#two" onclick="foodpoisonAdd();"class="w3-btn w3-grey w3-round">Less than a few days</a> <!--/Button takes participant to next page, second question. Button counts for allergy symptoms. Color was changed from carrot to nephritis.-->
+         	<a href="#two" onclick="stomachbugAdd();"class="w3-btn w3-grey w3-round">More than a few days</a><!--/Button takes participant to next page, second question. Button counts for cold symptoms. Color was changed from carrot to alizarin.-->
 	</div>
 	<!--/This division allows for separation to begin next page.-->
 </div>
@@ -152,7 +152,7 @@ img, object{
 	</div>
 
 	<div id="content" class="w3-container">
-	<p>Are you experiencing a high-grade or low-grade fever?</p><!--Inserted third diagnostic questoin.-->
+	<p>Are you experiencing a high-grade or low-grade fever?</p><!--Inserted third diagnostic question.-->
 		<a href="#four" onclick="stomachbugAdd();"class="w3-btn w3-flat-nephritis"> Low-grade fever </a><!--/Button takes participant to next page, fourth question. Button counts for cold symptoms. Color was changed from carrot to nephritis.-->
 		<a href="#four" onclick="foodpoisonAdd();"class="w3-btn w3-flat-alizarin"> High-grade fever </a><!--/Button takes participant to next page, fourth question. Button counts for allergy symptoms. Color was changed from carrot to alizarin-->
 	</div>
