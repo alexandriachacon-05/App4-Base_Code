@@ -30,7 +30,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 <head> 
 	<title>Stomach Bug or Food Poisoning </title> <!--/This changes the website title how it appears on a tab-->
-]	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<link rel="stylesheet" href="w3.css">
 	<link rel="stylesheet" href="w3-colors-flat.css">
@@ -39,12 +39,13 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 <script>
 
 
-  	var stomachbug_count = 0; //Variable for stomach bug count
-        var foodpoison_count = 0; //variable for food poisoning count
+	var stomachbug_count = 0; //Variable for stomach bug count (how many times button was pressed)
+	var foodpoison_count = 0; //variable for food poisoning count (how many times button was pressed)
 
 
-        function stomachbugAdd(){ 
-            stomachbug_count = stomachbug_count + 1; //function for stomach bug count, adds 1 to count when button clicked
+
+	function stomachbugAdd(){ 
+         stomachbug_count = stomachbug_count + 1; //function for stomach bug count, adds 1 to count when button clicked
 		alert(stomachbug_count); //alert pop up for stomach bug count
 
         }
@@ -55,21 +56,19 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
         }
 
 	function newtext(){//Added a new function and named it "newtext" for when text on page 5 is changed to probability text.;
-
-	var percentstomachbug = stomachbug_count/4*100 // Created variable to keep count of stomach bug symptoms and calculate probability percentage.;
-	var percentfoodpoison = foodpoison_count/4*100 // Created variable to keep count of food poisoning symptoms and calculate probability percentage.;
-	var resultText = document.getElementById("results");//Added variable for the results content on page 5.;
-	resultText.innerHTML = "Probability it is a stomach bug =" + percentstomachbug + "% <br> Probability it is food poisoning =" + percentfoodpoison + "%"//This changes the results content to the final probability/diagnosis. Added percentage symbols.
+		var percentstomachbug = stomachbug_count/4*100 // Created variable to keep count of stomach bug symptoms and calculate probability percentage.;
+		var percentfoodpoison = foodpoison_count/4*100 // Created variable to keep count of food poisoning symptoms and calculate probability percentage.;
+		var resultText = document.getElementById("results");//Added variable for the results content on page 5.;
+		resultText.innerHTML = "Probability it is a stomach bug =" + percentstomachbug + "% <br> Probability it is food poisoning =" + percentfoodpoison + "%"//This changes the results content to the final probability/diagnosis. Added percentage symbols.
 		
 	}
 
 </script>	
 
 
-<!-- THIS STYLE CODE HELPS MAKE YOUR APP LOOK GOOD. PROBABLY DONT MESS WITH IT -->
-<style>	
+<!-- This is the formatting for page layout -->
 
-<style>
+<style>	
 
 .body {
      margin: 0em;
@@ -101,92 +100,88 @@ img, object{
 
 <body>
 	
-	<!-- HERE IS WHERE ALL OF YOUR HTML PAGES GO -->
 
 <div id="header" class="w3-container w3-flat-midnight-blue"><!--/Midnight blue color header.-->
 	<h1>Do you have food poisoning or a stomach bug?</h1> <!--/This is the question in the header-->
 
 </div>
 	
-<div id="content" class="w3-container">
-	<p>Are you feeling like you might have food poisoning but wonder if it is a stomach bug? Answer a few short questions to find out!</p><!--/Added initial question that is brief description of purpose of website-->
+	<div id="content" class="w3-container">
+		<p>Are you feeling like you might have food poisoning but wonder if it is a stomach bug? Answer a few short questions to find out!</p><!--/Added initial question that is brief description of purpose of website-->
 
-<img src="https://www.thehealthy.com/wp-content/uploads/2017/12/stomach-bug-vs-food-poisoning-how-to-tell-the-difference-342461018-CHAjAMP-ft.jpg" alt="Man holding stomach"> <!-- added image code-->
+		<img src="https://www.thehealthy.com/wp-content/uploads/2017/12/stomach-bug-vs-food-poisoning-how-to-tell-the-difference-342461018-CHAjAMP-ft.jpg" alt="Man holding stomach"> <!-- added image code-->
 	
-	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a><!--/Clicking this button takes the participant to the next page, first question.-->
+		<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a><!--/Clicking this button takes the participant to the next page, first question.-->
 	
-	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
+		<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
  	
 	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
+
+	</div>
+
 
 <div class="page" id="one"><!--/This begins the first page, first diagnostic question-->
 	<div id="header" class="w3-container w3-flat-midnight-blue"><!--/Made header midnight blue-->
 		<h1>Question 1</h1> <!--/Inserted question 1 header-->
 	</div>
 	
-    	<div id="content" class="w3-container">
-        <p>How long have your symptoms been ongoing?</p> <!--/Inserted first diagnostic question-->
+    		<div id="content" class="w3-container">
+      	  	<p>How long have your symptoms been ongoing?</p> <!--/Inserted first diagnostic question-->
+		</div>
+
 		<a href="#two" onclick="foodpoisonAdd();"class="w3-btn w3-grey w3-round">Less than a few days</a> <!--/Button takes participant to next page, second question. Button counts for food poisoning symptoms. Color is grey, button is round.-->
          	<a href="#two" onclick="stomachbugAdd();"class="w3-btn w3-grey w3-round">More than a few days</a> <!--/Button takes participant to next page, second question. Button counts for stomach bug symptoms. Color is grey, button is round.-->
 	</div>
 	<!--/This division allows for separation to begin next page.-->
-</div>
 
 <div class="page" id="two"><!--/This begins the second page, second diagnostic question.-->
 	<div class="w3-container w3-flat-midnight-blue"><!--/Created midnight blue color for header.-->
 		<h1>Question 2</h1><!--/Inserted question 2 header-->
 	</div>
 	
-	<div id="content" class="w3-container">
-	<p>Are you very nauseated?</p><!--/Inserted second diagnostic question.-->
+		<div id="content" class="w3-container">
+		<p>Are you very nauseated?</p><!--/Inserted second diagnostic question.-->
 		<a href="#three" onclick="foodpoisonAdd();"class="w3-btn w3-grey w3-round"> I am not extremely nauseated </a> <!--/Button takes participant to next page, third question. Button counts for food poisoning symptoms. Color is grey, button is round.-->
 		<a href="#three" onclick="stomachbugAdd();"class="w3-btn w3-grey w3-round"> I am extremely nauseated </a> <!--/Button takes participant to next page, third question. Button counts for stomach bug symptoms. Color is grey, button is round.-->
 	</div>
 	<!--This division break allows separation to begin next page.-->
-
-</div>
 	
 <div class="page" id="three"><!--/This begins the third page, third diagnostic question.-->
 	<div class="w3-container w3-flat-midnight-blue"><!--/Created midnight blue color for header.-->
 		<h1>Question 3</h1><!--/Inserted header for Question 3-->
 	</div>
 
-	<div id="content" class="w3-container">
-	<p>Are you experiencing a high-grade or low-grade fever?</p><!--Inserted third diagnostic question.-->
+		<div id="content" class="w3-container">
+		<p>Are you experiencing a high-grade or low-grade fever?</p><!--Inserted third diagnostic question.-->
 		<a href="#four" onclick="stomachbugAdd();"class="w3-btn w3-grey w3-round"> Low-grade fever </a> <!--/Button takes participant to next page, fourth question. Button counts for stomach bug symptoms. Color is grey, button is round.-->
 		<a href="#four" onclick="foodpoisonAdd();"class="w3-btn w3-grey w3-round"> High-grade fever </a> <!--/Button takes participant to next page, fourth question. Button counts for food poisoning symptoms. Color is grey, button is round.-->
 	</div>
 	<!--/This division break allows separation to begin next page.-->
-</div>
 
 <div class="page" id="four"><!--/This begins the fourth page, fourth diagnostic question.-->
 	<div class="w3-container w3-flat-midnight-blue"><!--/Created midnight blue color for header.-->
 		<h1>Question 4</h1><!--/Inserted header for Question 4-->
 	</div>
 
-	<div id="content" class="w3-container">
-	<p>Is your stool watery or does it contain blood/mucus?</p><!--/Inserted fourth diagnostic question.-->
+		<div id="content" class="w3-container">
+		<p>Is your stool watery or does it contain blood/mucus?</p><!--/Inserted fourth diagnostic question.-->
 		<a href="#five" onclick="stomachbugAdd();" class="w3-btn w3-grey w3-round"> Watery </a> <!--/Button takes participant to next page, final results. Button counts for stomach bug symptoms. Color is grey, button is round.-->
 		<a href="#five" onclick="foodpoisonAdd();"class="w3-btn w3-grey w3-round"> Blood/mucus </a> <!--/Button takes participant to next page, final results. Button counts for food poisoning symptoms. Color is grey, button is round.-->
 
 	</div>
 	<!--/This division break allows separation to begin next page.-->
-
-</div>
 	
 <div class="page" id="five"><!--/This begins the last page, final results.-->
 	<div class="w3-container w3-flat-midnight-blue"><!--Created midnight blue color for header.-->
 		<h1>Results</h1><!--Inserted results header-->
 	</div>	
 
-	<div id="content" class="w3-container">
+		<div id="content" class="w3-container">
 		<p id="results">Click the button to know whether you have a food poisoning or a stomach bug!</p><!--This is the text that changes with the newtext function to become probability (results) statement.-->
 		<a href="#five" onclick="newtext();" class="w3-btn w3-grey w3-round"> Click me for results! </a><!--Clicking on button allows for the text change.Changed button to grey color, round shape.-->
 	
 	</div>
 	<!--This concludes the pages and questionnaire.-->
-
-</div>
 
 <footer class="w3-bottom w3-container w3-flat-midnight-blue"> <!--/This is the footer.-->
 	<p>DIY!</p>
